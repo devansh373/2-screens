@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import {
   View,
@@ -7,7 +5,6 @@ import {
   ActivityIndicator,
   Text,
   TouchableOpacity,
- 
   useWindowDimensions,
 } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -29,7 +26,7 @@ export default function HomeScreen({ navigation }: Props) {
     null
   );
 
-  const { width, height } = useWindowDimensions(); 
+  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1500);
@@ -67,11 +64,9 @@ export default function HomeScreen({ navigation }: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      
       <View style={[styles.gradientBackground, { height: height * 0.3 }]} />
 
-      
-      <View style={{ paddingHorizontal: width * 0.05,marginVertical:10 }}>
+      <View style={{ paddingHorizontal: width * 0.05, marginVertical: 10 }}>
         <View style={[styles.header, { padding: width * 0.06 }]}>
           <View style={styles.headerContent}>
             <Text style={[styles.greeting, { fontSize: width * 0.035 }]}>
@@ -99,7 +94,6 @@ export default function HomeScreen({ navigation }: Props) {
         </View>
       </View>
 
-      
       <View
         style={[
           styles.filtersCard,
@@ -133,7 +127,6 @@ export default function HomeScreen({ navigation }: Props) {
         )}
       </View>
 
-      
       <View style={styles.resultsHeader}>
         <Text style={[styles.resultsCount, { fontSize: width * 0.045 }]}>
           {filteredClasses.length} classes found
@@ -145,7 +138,6 @@ export default function HomeScreen({ navigation }: Props) {
         </View>
       </View>
 
-      
       {filteredClasses.length === 0 ? (
         <View style={styles.emptyState}>
           <View
@@ -175,5 +167,3 @@ export default function HomeScreen({ navigation }: Props) {
     </SafeAreaView>
   );
 }
-
-

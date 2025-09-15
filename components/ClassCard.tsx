@@ -11,7 +11,7 @@ export default function ClassCard({ classItem }: Props) {
   const [booked, setBooked] = useState(false);
 
   const handleBook = () => {
-    const success = Math.random() > 0.15; 
+    const success = Math.random() > 0.15;
     setBooked(true);
 
     setTimeout(() => {
@@ -36,10 +36,10 @@ export default function ClassCard({ classItem }: Props) {
         onPress={handleBook}
         disabled={booked}
       >
-        <Text style={styles.buttonText}>{booked ? "Booked" : "Quick Book"}</Text>
+        <Text style={styles.buttonText}>
+          {booked ? "Booked" : "Quick Book"}
+        </Text>
       </TouchableOpacity>
     </View>
   );
 }
-
-

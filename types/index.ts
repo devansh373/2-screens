@@ -1,4 +1,4 @@
-export type Level = 'Beginner' | 'Intermediate' | 'Advanced';
+export type Level = "Beginner" | "Intermediate" | "Advanced";
 
 export interface Class {
   id: string;

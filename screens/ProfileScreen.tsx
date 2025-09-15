@@ -1,37 +1,31 @@
-
-
-
-
-import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { mockUser } from '../data/mock';
-import { styles } from './ProfileScreen.styles';
+import React, { useState, useEffect } from "react";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { mockUser } from "../data/mock";
+import { styles } from "./ProfileScreen.styles";
 
 export default function ProfileScreen() {
   const [name, setName] = useState(mockUser.name);
   const [editing, setEditing] = useState(false);
 
-  
   useEffect(() => {
     const loadProfile = async () => {
       try {
-        const storedName = await AsyncStorage.getItem('user_name');
+        const storedName = await AsyncStorage.getItem("user_name");
         if (storedName) setName(storedName);
       } catch (error) {
-        console.error('Error loading profile:', error);
+        console.error("Error loading profile:", error);
       }
     };
     loadProfile();
   }, []);
 
-  
   useEffect(() => {
     const saveProfile = async () => {
       try {
-        await AsyncStorage.setItem('user_name', name);
+        await AsyncStorage.setItem("user_name", name);
       } catch (error) {
-        console.error('Error saving profile:', error);
+        console.error("Error saving profile:", error);
       }
     };
     if (name) saveProfile();
@@ -56,7 +50,10 @@ export default function ProfileScreen() {
             placeholder="Enter your name"
           />
         ) : (
-          <TouchableOpacity onPress={() => setEditing(true)} style={styles.nameContainer}>
+          <TouchableOpacity
+            onPress={() => setEditing(true)}
+            style={styles.nameContainer}
+          >
             <Text style={styles.nameText}>{name}</Text>
             <Text style={styles.editHint}>Tap to edit</Text>
           </TouchableOpacity>

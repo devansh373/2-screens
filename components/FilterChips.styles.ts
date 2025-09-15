@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
   },
   scroll: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginVertical: 4,
   },
   chip: {
@@ -16,18 +16,18 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
   },
   chipSelected: {
-    backgroundColor: '#007AFF',
-    borderColor: '#007AFF',
+    backgroundColor: "#007AFF",
+    borderColor: "#007AFF",
   },
   chipUnselected: {
-    backgroundColor: '#fff',
-    borderColor: '#ccc',
+    backgroundColor: "#fff",
+    borderColor: "#ccc",
   },
   textSelected: {
-    color: '#fff',
-    fontWeight: 'bold',
+    color: "#fff",
+    fontWeight: "bold",
   },
   textUnselected: {
-    color: '#333',
+    color: "#333",
   },
 });

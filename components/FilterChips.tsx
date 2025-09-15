@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { styles } from './FilterChips.styles';
+import React from "react";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { styles } from "./FilterChips.styles";
 
 interface FilterChipsProps {
   levels: string[];
@@ -21,36 +21,62 @@ export default function FilterChips({
 }: FilterChipsProps) {
   return (
     <View style={styles.container}>
-      
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scroll}>
-        {levels.map(level => (
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.scroll}
+      >
+        {levels.map((level) => (
           <TouchableOpacity
             key={level}
             style={[
               styles.chip,
-              selectedLevel === level ? styles.chipSelected : styles.chipUnselected,
+              selectedLevel === level
+                ? styles.chipSelected
+                : styles.chipUnselected,
             ]}
-            onPress={() => onSelectLevel(selectedLevel === level ? null : level)}
+            onPress={() =>
+              onSelectLevel(selectedLevel === level ? null : level)
+            }
           >
-            <Text style={selectedLevel === level ? styles.textSelected : styles.textUnselected}>
+            <Text
+              style={
+                selectedLevel === level
+                  ? styles.textSelected
+                  : styles.textUnselected
+              }
+            >
               {level}
             </Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
 
-      
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scroll}>
-        {instructors.map(inst => (
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.scroll}
+      >
+        {instructors.map((inst) => (
           <TouchableOpacity
             key={inst}
             style={[
               styles.chip,
-              selectedInstructor === inst ? styles.chipSelected : styles.chipUnselected,
+              selectedInstructor === inst
+                ? styles.chipSelected
+                : styles.chipUnselected,
             ]}
-            onPress={() => onSelectInstructor(selectedInstructor === inst ? null : inst)}
+            onPress={() =>
+              onSelectInstructor(selectedInstructor === inst ? null : inst)
+            }
           >
-            <Text style={selectedInstructor === inst ? styles.textSelected : styles.textUnselected}>
+            <Text
+              style={
+                selectedInstructor === inst
+                  ? styles.textSelected
+                  : styles.textUnselected
+              }
+            >
               {inst}
             </Text>
           </TouchableOpacity>
@@ -59,5 +85,3 @@ export default function FilterChips({
     </View>
   );
 }
-
-

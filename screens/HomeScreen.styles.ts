@@ -1,43 +1,100 @@
 import { StyleSheet } from 'react-native';
 
+
+
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
+  container: { flex: 1, backgroundColor: "#f8fafc" },
+  gradientBackground: {
+    position: "absolute",
+    top: -93,
+    left: 0,
+    right: 0,
+    backgroundColor: "#6366f1",
+    opacity: 0.2,
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f8fafc",
   },
-  profileButton: {
-    padding: 8,
-    backgroundColor: '#007AFF',
-    borderRadius: 8,
-    alignSelf: 'flex-end',
-    marginBottom: 12,
+  loadingCard: {
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    alignItems: "center",
+    elevation: 8,
   },
-  profileButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
+  loadingText: {
+    marginTop: 16,
+    color: "#64748b",
+    fontWeight: "500",
+    textAlign: "center",
   },
-  emptyContainer: {
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    elevation: 6,
+  },
+  headerContent: { flex: 1 },
+  greeting: { color: "#6366f1", fontWeight: "600" },
+  title: { fontWeight: "800", color: "#1e293b" },
+  profileButton: { marginLeft: 20 },
+  profileGradient: {
+    borderRadius: 999,
+    backgroundColor: "#6366f1",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  filtersCard: { backgroundColor: "#fff", borderRadius: 20, elevation: 4 },
+  filtersTitle: { fontWeight: "700", color: "#1e293b", marginBottom: 16 },
+  clearFiltersButton: {
+    alignSelf: "flex-end",
+    marginTop: 16,
+    backgroundColor: "#fee2e2",
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  clearFiltersText: { color: "#dc2626", fontWeight: "600" },
+  resultsHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 24,
+    paddingTop: 24,
+    paddingBottom: 16,
+  },
+  resultsCount: { fontWeight: "700", color: "#1e293b" },
+  countBadge: {
+    backgroundColor: "#6366f1",
+    borderRadius: 16,
+    alignItems: "center",
+  },
+  countBadgeText: { color: "#fff", fontWeight: "700" },
+  listContent: { paddingHorizontal: 24, paddingTop: 16, paddingBottom: 32 },
+  emptyState: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 40,
   },
-  emptyText: {
-    fontSize: 16,
-    marginBottom: 12,
+  emptyCircle: {
+    borderRadius: 999,
+    backgroundColor: "#f8fafc",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 2,
+    borderColor: "#e2e8f0",
+    marginBottom: 20,
   },
-  clearButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    backgroundColor: '#007AFF',
-    borderRadius: 8,
+  emptyTitle: {
+    fontWeight: "700",
+    color: "#1e293b",
+    marginBottom: 8,
+    textAlign: "center",
   },
-  clearButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-  },
+  emptySubtitle: { color: "#64748b", textAlign: "center", lineHeight: 20 },
 });

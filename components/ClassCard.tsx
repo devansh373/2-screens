@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { View, Text, Button, ToastAndroid } from 'react-native';
-import { Class } from '../types';
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, ToastAndroid } from "react-native";
+import { Class } from "../types";
+import { styles } from "./ClassCard.styles";
 
 interface Props {
   classItem: Class;
@@ -8,24 +9,37 @@ interface Props {
 
 export default function ClassCard({ classItem }: Props) {
   const [booked, setBooked] = useState(false);
+
   const handleBook = () => {
-    const success = Math.random() > 0.15;
+    const success = Math.random() > 0.15; 
     setBooked(true);
+
     setTimeout(() => {
       if (!success) {
-        setBooked(false); 
-        ToastAndroid.show('Booking failed!', ToastAndroid.SHORT);
+        setBooked(false);
+        ToastAndroid.show("Booking failed!", ToastAndroid.SHORT);
       } else {
-        ToastAndroid.show('Booked successfully!', ToastAndroid.SHORT);
+        ToastAndroid.show("Booked successfully!", ToastAndroid.SHORT);
       }
     }, 500);
   };
 
   return (
-    <View style={{ padding: 12, borderWidth: 1, borderRadius: 8, marginBottom: 8 }}>
-      <Text style={{ fontWeight: 'bold' }}>{classItem.name}</Text>
-      <Text>{classItem.level} | {classItem.instructor} | {classItem.center}</Text>
-      <Button title={booked ? 'Booked' : 'Quick Book'} onPress={handleBook} disabled={booked} />
+    <View style={styles.card}>
+      <Text style={styles.title}>{classItem.name}</Text>
+      <Text style={styles.details}>
+        {classItem.level} • {classItem.instructor} • {classItem.center}
+      </Text>
+
+      <TouchableOpacity
+        style={[styles.button, booked && styles.buttonDisabled]}
+        onPress={handleBook}
+        disabled={booked}
+      >
+        <Text style={styles.buttonText}>{booked ? "Booked" : "Quick Book"}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
+
+
